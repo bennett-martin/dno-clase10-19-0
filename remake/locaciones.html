@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="description" content="Diseño y nuevos medios, segunda versión remota" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous" />
+        <link href="style.css" rel="stylesheet" />
+        <title>Remake &#127909;</title>
+          <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
+          <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+    </head>
+    <body>
+        <div class="container fixed-top">
+            <nav class="d-flex justify-content-between py-3">
+                <a href="index.html" >Portada</a> <a href="locaciones.html"class="active">Locaciones</a> <a href="ganancias.html">Ganancias</a>
+            </nav>
+        </div>
+        <main class="container py-5">
+            <div class="row py-3">
+                <div id=mapa class="col-12" >
+
+                </div>
+            </div>
+        </main>
+        <div class="container fixed-bottom">
+            <footer class="d-flex justify-content-between py-3">
+                <div>Martin Bennett</div>
+                <div>DNO037</div>
+            </footer>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+        <script>
+    var mymap = L.map('mapa').setView([33.5427796,9.9672612], 2);
+    L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+        maxZoom: 18,
+        id: 'mapbox/light-v10',
+        tileSize: 512,
+        zoomOffset: -1
+    }).addTo(mymap);
+    var greenIcon = L.icon({
+            iconUrl: 'images/cof.jpeg',
+
+            iconSize:     [42, 45],
+            iconAnchor:   [0,0],
+            popupAnchor:  [0,0]
+    });
+
+    L.marker([34.1736734,-118.3541116], {icon: greenIcon}).addTo(mymap).bindPopup("<b>Cup of Tea Productions</b>.Estudio de grabación de voiceover ingles.");
+    L.marker([47.6444027,-122.1487348], {icon: greenIcon}).addTo(mymap).bindPopup("<b>Nintendo of America</b>.Distribuidora de la franquicia en occidente.");
+    L.marker([34.9509241,135.7432585], {icon: greenIcon}).addTo(mymap).bindPopup("<b>Nintendo HQ</b>.Casa central de la distribuidora.");
+    L.marker([34.9626275,135.7462285], {icon: greenIcon}).addTo(mymap).bindPopup("<b>Intelligent Systems HQ</b>.Desarrollador de el videojuego.");
+    L.marker([34.9948561,135.7828576], {icon: greenIcon}).addTo(mymap).bindPopup("<b>Kiyomizu-dera</b>.Inspiración para castillo dentro del juego Fire emblem fates.");
+</script>
+    </body>
+</html>

@@ -1,0 +1,17 @@
+@charset "UTF-8";
+
+* {
+    transition: all ease 1s;
+}
+:hover {
+    transition: all ease 1s;
+}
+body {
+    background: #222;
+}
+aside img {
+    transform: rotate(355deg) scale(0.9);
+}
+aside img:hover {
+    transform: rotate(0) scale(1);
+}
